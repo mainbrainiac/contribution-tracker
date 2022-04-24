@@ -23,14 +23,7 @@ export class Purpose {
   
       const purposeWithoutSpaces = purpose.replace(/\s/g, '')
   
-      if(purposeWithoutSpaces.length < 32 || purposeWithoutSpaces.length > 256) {
-        return false
-      }
-  
-      const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-      const hasSpecialChars = purposeWithoutSpaces.match(specialChars)
-  
-      if(hasSpecialChars) {
+      if(purposeWithoutSpaces.length < 12 || purposeWithoutSpaces.length > 256) {
         return false
       }
   

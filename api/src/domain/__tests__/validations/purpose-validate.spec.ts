@@ -26,14 +26,8 @@ describe('Purpose validate', () => {
     expect(isValid()).toBeFalsy()
   })
 
-  it('should be false if purpose length is smaller than 32', () => {
-    setPurpose('a'.repeat(30))
-
-    expect(isValid()).toBeFalsy()
-  })
-
-  it('should return false if has special characters', () => {
-    setPurpose('a'.repeat(6) + '!')
+  it('should be false if purpose length is smaller than 12', () => {
+    setPurpose('a'.repeat(11))
 
     expect(isValid()).toBeFalsy()
   })

@@ -31,10 +31,4 @@ describe('Name validate', () => {
 
     expect(isValid()).toBeFalsy()
   })
-
-  it('should return false if has special characters', () => {
-    setName('a'.repeat(6) + '!')
-
-    expect(isValid()).toBeFalsy()
-  })
 })

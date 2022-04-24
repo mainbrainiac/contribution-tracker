@@ -1,5 +1,5 @@
 import { Charity } from '@/domain/entities'
-import { validCharityParams, invalidCharityParams } from '@/domain/__tests__/entities/mocks'
+import { validCharityData, invalidCharityData } from '@/domain/__tests__/entities/mocks'
 
 describe('Charity entity', () => {
   it('should be defined', () => {
@@ -7,13 +7,13 @@ describe('Charity entity', () => {
   })
 
   it('should not create when has invalid values', () => {
-    const charity = Charity.create(invalidCharityParams())
+    const charity = Charity.create(invalidCharityData())
 
     expect(charity).not.toBeInstanceOf(Charity)
   })
 
   it('should create when has valid values', () => {
-    const charity = Charity.create(validCharityParams())
+    const charity = Charity.create(validCharityData())
 
     expect(charity.value).toBeInstanceOf(Charity)
   })

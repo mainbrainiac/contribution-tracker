@@ -27,13 +27,6 @@ export class Name {
       return false
     }
 
-    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    const hasSpecialChars = nameWithoutSpaces.match(specialChars)
-
-    if(hasSpecialChars) {
-      return false
-    }
-
     return true
   } 
 
