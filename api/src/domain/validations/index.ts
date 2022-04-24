@@ -1,0 +1,6 @@
+export * from './email'
+export * from './name'
+export * from './password'
+export * from './total-donated'
+export * from './purpose'
+export * from './total-collected'

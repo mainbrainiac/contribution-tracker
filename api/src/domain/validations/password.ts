@@ -2,6 +2,7 @@ import { Either, left, right } from "@/shared";
 import { InvalidPasswordError } from "@/domain/errors";
 
 export class Password {
+  
   private constructor(private readonly password: string) {
     Object.freeze(this)
   }

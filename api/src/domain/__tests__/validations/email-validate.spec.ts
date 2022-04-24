@@ -1,4 +1,4 @@
-import { Email } from "@/domain/entities";
+import { Email } from "@/domain/validations";
 
 import faker from 'faker'
 

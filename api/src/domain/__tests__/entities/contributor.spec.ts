@@ -1,5 +1,5 @@
 import { Contributor } from '@/domain/entities'
-import { validContributorParams, invalidContributorParams } from '@/domain/entities/__tests__/contributor/mocks'
+import { validContributorParams, invalidContributorParams } from '@/domain/__tests__/entities/mocks'
 
 describe('Contributor entity', () => {
   it('should be defined', () => {

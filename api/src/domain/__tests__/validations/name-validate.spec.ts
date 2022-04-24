@@ -1,6 +1,4 @@
-import { Name } from "@/domain/entities"
-
-import faker from 'faker'
+import { Name } from "@/domain/validations"
 
 describe('Name validate', () => {
   let name: string

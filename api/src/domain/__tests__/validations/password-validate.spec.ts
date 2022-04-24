@@ -1,4 +1,4 @@
-import { Password } from "@/domain/entities"
+import { Password } from "@/domain/validations"
 
 import faker from 'faker'
 

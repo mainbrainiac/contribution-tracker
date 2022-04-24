@@ -2,10 +2,8 @@ import { InvalidEmailError } from "@/domain/errors"
 import { Either, left, right } from "@/shared"
 
 export class Email {
-  private readonly email: string
-
-  private constructor(email: string) {
-    this.email = email
+  
+  private constructor(private readonly email: string) {
     Object.freeze(this)
   }
 

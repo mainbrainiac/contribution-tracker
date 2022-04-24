@@ -1,18 +1,19 @@
 import { Either, left, right } from '@/shared'
 import { InvalidEmailError, InvalidNameError } from '@/domain/errors'
-import { Email, Name, Password, Amount } from '@/domain/entities'
+import { Email, Name, Password, TotalDonated } from '@/domain/validations'
 
 export namespace Contributor {
   export type params = {
     name: string
     email: string
     password: string
-    amount: number
+    totalDonated: number
   }
 }
 
 export class Contributor {
-  private constructor(public readonly name: Name, public readonly email: Email, public readonly password: Password, public readonly amount: Amount) {
+  
+  private constructor(public readonly name: Name, public readonly email: Email, public readonly password: Password, public readonly totalDonated: TotalDonated) {
     Object.freeze(this)
   }
 
@@ -35,22 +36,22 @@ export class Contributor {
       return left(passwordOrError.value)
     }
 
-    const amountOrError  = Amount.create(contributorParams.amount)
+    const totalDonatedOrError  = TotalDonated.create(contributorParams.totalDonated)
 
-    if (amountOrError.isLeft()) {
-      return left(amountOrError.value)
+    if (totalDonatedOrError.isLeft()) {
+      return left(totalDonatedOrError.value)
     }
 
     const name: Name = nameOrError.value
     const email: Email = emailOrError.value
     const password: Password = passwordOrError.value
-    const amount: Amount = amountOrError.value
+    const totalDonated: TotalDonated = totalDonatedOrError.value
 
     return right(new Contributor(
       name,
       email,
       password,
-      amount
+      totalDonated
     ))
   }
 
