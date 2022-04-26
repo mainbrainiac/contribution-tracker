@@ -2,7 +2,6 @@ import { AddCharity } from '@/domain/usecases'
 import { CharityRepositorySpy } from '@/app/__tests__/mocks'
 import { AddCharityService } from '@/app/services'
 import { invalidCharityData, validCharityData } from '@/domain/__tests__/entities/mocks'
-import { right } from '@/shared'
 import { Charity } from '@/domain/entities'
 
 type SutTypes = {

@@ -2,14 +2,12 @@ import { Either, left, right } from '@/shared'
 import { InvalidEmailError, InvalidNameError } from '@/domain/errors'
 import { Email, Id, Name, Password, TotalDonated } from '@/domain/validations'
 
-export namespace Contributor {
-  export type params = {
-    id: string
-    name: string
-    email: string
-    password: string
-    totalDonated: number
-  }
+export type ContributorData = {
+  id: string
+  name: string
+  email: string
+  password: string
+  totalDonated: number
 }
 
 export class Contributor {
@@ -18,32 +16,32 @@ export class Contributor {
     Object.freeze(this)
   }
 
-  public static create(contributorParams: Contributor.params): Either<InvalidEmailError | InvalidNameError, Contributor> {
-    const idOrError = Id.create(contributorParams.id)
+  public static create(contributorData: ContributorData): Either<InvalidEmailError | InvalidNameError, Contributor> {
+    const idOrError = Id.create(contributorData.id)
 
     if(idOrError.isLeft()) {
       return left(idOrError.value)
     }
 
-    const nameOrError = Name.create(contributorParams.name)
+    const nameOrError = Name.create(contributorData.name)
 
     if(nameOrError.isLeft()) {
       return left(nameOrError.value)
     }
     
-    const emailOrError = Email.create(contributorParams.email)
+    const emailOrError = Email.create(contributorData.email)
 
     if(emailOrError.isLeft()) {
       return left(emailOrError.value)
     }
 
-    const passwordOrError = Password.create(contributorParams.password)
+    const passwordOrError = Password.create(contributorData.password)
 
     if (passwordOrError.isLeft()) {
       return left(passwordOrError.value)
     }
 
-    const totalDonatedOrError  = TotalDonated.create(contributorParams.totalDonated)
+    const totalDonatedOrError  = TotalDonated.create(contributorData.totalDonated)
 
     if (totalDonatedOrError.isLeft()) {
       return left(totalDonatedOrError.value)

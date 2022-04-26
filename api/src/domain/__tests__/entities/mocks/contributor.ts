@@ -1,8 +1,8 @@
-import { Contributor } from "@/domain/entities";
+import { ContributorData } from "@/domain/entities";
 
 import faker from 'faker'
 
-export const validContributorParams = (): Contributor.params => ({
+export const validContributorData = (): ContributorData => ({
   id: faker.datatype.uuid(),
   name: faker.name.firstName() + faker.name.lastName(),
   email: faker.internet.email(),
@@ -10,7 +10,7 @@ export const validContributorParams = (): Contributor.params => ({
   totalDonated: 1
 })
 
-export const invalidContributorParams = (): Contributor.params => ({
+export const invalidContributorData = (): ContributorData => ({
   id: faker.lorem.word(),
   name: '',
   email: '',
