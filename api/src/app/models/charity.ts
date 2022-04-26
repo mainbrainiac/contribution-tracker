@@ -1,4 +1,4 @@
-import { CharityData } from "@/domain/entities";
+import { CharityData } from '@/domain/entities'
 
 export interface CharityModel extends CharityData {
   createdAt: Date

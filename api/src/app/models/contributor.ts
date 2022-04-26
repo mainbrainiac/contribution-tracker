@@ -1,4 +1,4 @@
-import { ContributorData } from "@/domain/entities";
+import { ContributorData } from '@/domain/entities'
 
 export interface ContributorModel extends ContributorData {
   createdAt: Date

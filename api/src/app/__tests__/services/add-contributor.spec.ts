@@ -1,7 +1,10 @@
 import { AddContributor } from '@/domain/usecases'
 import { ContributorRepositorySpy } from '@/app/__tests__/mocks'
 import { AddContributorService } from '@/app/services'
-import { invalidContributorData, validContributorData } from '@/domain/__tests__/entities/mocks'
+import {
+  invalidContributorData,
+  validContributorData
+} from '@/domain/__tests__/entities/mocks'
 import { Contributor } from '@/domain/entities'
 
 type SutTypes = {
@@ -24,7 +27,7 @@ describe('AddContributorService', () => {
     const contributorData = validContributorData()
 
     const response = await sut.add(contributorData)
-    
+
     expect(response.value).toBeInstanceOf(Contributor)
   })
 
@@ -43,7 +46,9 @@ describe('AddContributorService', () => {
 
     await sut.add(contributorData)
 
-    expect(contributorRepositorySpy.addContributorCalledWith).toEqual(contributorData)
+    expect(contributorRepositorySpy.addContributorCalledWith).toEqual(
+      contributorData
+    )
   })
 
   it('should throw if ContributorRepositorySpy throws', async () => {

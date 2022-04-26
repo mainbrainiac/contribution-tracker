@@ -1,8 +1,7 @@
-import { InvalidPurposeError } from "@/domain/errors"
-import { Either, left, right } from "@/shared"
+import { InvalidPurposeError } from '@/domain/errors'
+import { Either, left, right } from '@/shared'
 
 export class Purpose {
-
   private constructor(private readonly purpose: string) {
     Object.freeze(this)
   }
@@ -16,18 +15,17 @@ export class Purpose {
   }
 
   public static isValid(purpose: string): boolean {
-      
-      if (!purpose) {
-        return false
-      }
-  
-      const purposeWithoutSpaces = purpose.replace(/\s/g, '')
-  
-      if(purposeWithoutSpaces.length < 12 || purposeWithoutSpaces.length > 256) {
-        return false
-      }
-  
-      return true
+    if (!purpose) {
+      return false
+    }
+
+    const purposeWithoutSpaces = purpose.replace(/\s/g, '')
+
+    if (purposeWithoutSpaces.length < 12 || purposeWithoutSpaces.length > 256) {
+      return false
+    }
+
+    return true
   }
 
   get value(): string {

@@ -1,4 +1,4 @@
-import { TotalCollected } from "@/domain/validations"
+import { TotalCollected } from '@/domain/validations'
 
 describe('TotalCollected validate', () => {
   let totalCollected: number
@@ -7,7 +7,7 @@ describe('TotalCollected validate', () => {
     totalCollected = null
   })
 
-  const setTotalCollected = (value: number) => totalCollected = value
+  const setTotalCollected = (value: number) => (totalCollected = value)
   const isValid = (): boolean => TotalCollected.isValid(totalCollected)
 
   it('should be true when total collected is valid', () => {
@@ -15,7 +15,7 @@ describe('TotalCollected validate', () => {
 
     expect(isValid()).toBeTruthy()
   })
-  
+
   it('should be false when total collected is null', () => {
     expect(isValid()).toBeFalsy()
   })

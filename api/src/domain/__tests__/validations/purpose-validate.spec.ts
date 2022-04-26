@@ -1,4 +1,4 @@
-import { Purpose } from "@/domain/validations"
+import { Purpose } from '@/domain/validations'
 
 describe('Purpose validate', () => {
   let purpose: string
@@ -7,7 +7,7 @@ describe('Purpose validate', () => {
     purpose = null
   })
 
-  const setPurpose = (value: string) => purpose = value
+  const setPurpose = (value: string) => (purpose = value)
   const isValid = (): boolean => Purpose.isValid(purpose)
 
   it('should be true if purpose is valid', () => {

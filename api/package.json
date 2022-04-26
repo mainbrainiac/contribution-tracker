@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --noStackTrace",
+    "test": "jest --passWithNoTests --noStackTrace --silent",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --config .prettierrc '**/**/*.ts' --write",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -13,10 +15,18 @@
   "devDependencies": {
     "@types/faker": "^5.5.3",
     "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
     "faker": "^5.5.3",
-    "husky": "^7.0.4",
+    "husky": "^6.0.0",
     "jest": "^27.5.1",
+    "lint-staged": "^12.4.0",
+    "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

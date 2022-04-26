@@ -1,4 +1,4 @@
-import { Name } from "@/domain/validations"
+import { Name } from '@/domain/validations'
 
 describe('Name validate', () => {
   let name: string
@@ -7,7 +7,7 @@ describe('Name validate', () => {
     name = null
   })
 
-  const setName = (value: string) => name = value
+  const setName = (value: string) => (name = value)
   const isValid = (): boolean => Name.isValid(name)
 
   it('should be true if name is valid', () => {

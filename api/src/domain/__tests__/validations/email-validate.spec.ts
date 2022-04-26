@@ -1,4 +1,4 @@
-import { Email } from "@/domain/validations";
+import { Email } from '@/domain/validations'
 
 import faker from 'faker'
 
@@ -9,7 +9,7 @@ describe('Email validate', () => {
     email = null
   })
 
-  const setEmail = (value: string) => email = value
+  const setEmail = (value: string) => (email = value)
   const isValid = (): boolean => Email.isValid(email)
 
   it('should be false when email is null', () => {
@@ -51,5 +51,4 @@ describe('Email validate', () => {
 
     expect(isValid()).toBeFalsy()
   })
-  
 })

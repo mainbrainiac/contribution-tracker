@@ -1,7 +1,10 @@
 import { AddCharity } from '@/domain/usecases'
 import { CharityRepositorySpy } from '@/app/__tests__/mocks'
 import { AddCharityService } from '@/app/services'
-import { invalidCharityData, validCharityData } from '@/domain/__tests__/entities/mocks'
+import {
+  invalidCharityData,
+  validCharityData
+} from '@/domain/__tests__/entities/mocks'
 import { Charity } from '@/domain/entities'
 
 type SutTypes = {
@@ -24,7 +27,7 @@ describe('AddCharityService', () => {
     const charityData = validCharityData()
 
     const response = await sut.add(charityData)
-    
+
     expect(response.value).toBeInstanceOf(Charity)
   })
 

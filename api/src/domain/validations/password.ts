@@ -1,14 +1,15 @@
-import { Either, left, right } from "@/shared";
-import { InvalidPasswordError } from "@/domain/errors";
+import { Either, left, right } from '@/shared'
+import { InvalidPasswordError } from '@/domain/errors'
 
 export class Password {
-  
   private constructor(private readonly password: string) {
     Object.freeze(this)
   }
 
-  public static create(password: string): Either<InvalidPasswordError, Password> {
-    if(!Password.isValid(password)) {
+  public static create(
+    password: string
+  ): Either<InvalidPasswordError, Password> {
+    if (!Password.isValid(password)) {
       return left(new InvalidPasswordError(password))
     }
 
@@ -16,7 +17,6 @@ export class Password {
   }
 
   public static isValid(password: string): boolean {
-
     if (!password) {
       return false
     }

@@ -1,23 +1,21 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
+  roots: ["<rootDir>/src"],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/main/**',
-    '!<rootDir>/src/**/*-ports.ts',
-    '!**/ports/**',
-    '!**/test/**',
-    '!**/config/**'
+    "<rootDir>/src/**/*.ts",
+    "!<rootDir>/src/main/**",
+    "!<rootDir>/src/**/*-ports.ts",
+    "!**/ports/**",
+    "!**/test/**",
+    "!**/config/**",
   ],
-  testMatch: [
-    '<rootDir>/src/**/*.spec.ts'
-  ],
-  coverageDirectory: 'coverage',
-  testEnvironment: 'node',
+  testMatch: ["<rootDir>/src/**/*.spec.ts"],
+  coverageDirectory: "coverage",
+  testEnvironment: "node",
   transform: {
-    '.+\\.ts$': 'ts-jest'
+    ".+\\.ts$": "ts-jest",
   },
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1'
+    "@/(.*)": "<rootDir>/src/$1",
   },
-  preset: "ts-jest"
-}
+  preset: "ts-jest",
+};

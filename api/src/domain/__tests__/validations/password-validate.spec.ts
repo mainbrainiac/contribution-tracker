@@ -1,15 +1,15 @@
-import { Password } from "@/domain/validations"
+import { Password } from '@/domain/validations'
 
 import faker from 'faker'
 
 describe('Password validate', () => {
-  let password: string;
+  let password: string
 
   beforeEach(() => {
     password = null
   })
 
-  const setPassword = (value: string) => password = value
+  const setPassword = (value: string) => (password = value)
   const isValid = (): boolean => Password.isValid(password)
 
   it('should be false when password is null', () => {

@@ -1,9 +1,12 @@
 import { Charity } from '@/domain/entities'
-import { validCharityData, invalidCharityData } from '@/domain/__tests__/entities/mocks'
+import {
+  validCharityData,
+  invalidCharityData
+} from '@/domain/__tests__/entities/mocks'
 
 describe('Charity entity', () => {
   it('should be defined', () => {
-    expect(Charity).toBeDefined();
+    expect(Charity).toBeDefined()
   })
 
   it('should not create when has invalid values', () => {

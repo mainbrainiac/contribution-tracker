@@ -1,9 +1,12 @@
 import { Contributor } from '@/domain/entities'
-import { validContributorData, invalidContributorData } from '@/domain/__tests__/entities/mocks'
+import {
+  validContributorData,
+  invalidContributorData
+} from '@/domain/__tests__/entities/mocks'
 
 describe('Contributor entity', () => {
   it('should be defined', () => {
-    expect(Contributor).toBeDefined();
+    expect(Contributor).toBeDefined()
   })
 
   it('should not create when has invalid values', () => {

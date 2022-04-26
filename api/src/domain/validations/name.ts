@@ -1,8 +1,7 @@
-import { Either, left, right } from "@/shared"
-import { InvalidNameError } from "@/domain/errors"
+import { Either, left, right } from '@/shared'
+import { InvalidNameError } from '@/domain/errors'
 
 export class Name {
-
   private constructor(private readonly name: string) {
     Object.freeze(this)
   }
@@ -16,19 +15,18 @@ export class Name {
   }
 
   public static isValid(name: string): boolean {
-
     if (!name) {
       return false
     }
 
     const nameWithoutSpaces = name.replace(/\s/g, '')
 
-    if(nameWithoutSpaces.length < 3 || nameWithoutSpaces.length > 64) {
+    if (nameWithoutSpaces.length < 3 || nameWithoutSpaces.length > 64) {
       return false
     }
 
     return true
-  } 
+  }
 
   get value(): string {
     return this.name

@@ -1,13 +1,14 @@
-import { InvalidTotalDonatedError } from "@/domain/errors"
-import { Either, left, right } from "@/shared"
+import { InvalidTotalDonatedError } from '@/domain/errors'
+import { Either, left, right } from '@/shared'
 
 export class TotalCollected {
-  
   private constructor(private readonly totalCollected: number) {
     Object.freeze(this)
   }
 
-  public static create(totalCollected: number): Either<InvalidTotalDonatedError, TotalCollected> {
+  public static create(
+    totalCollected: number
+  ): Either<InvalidTotalDonatedError, TotalCollected> {
     if (!TotalCollected.isValid(totalCollected)) {
       return left(new InvalidTotalDonatedError(totalCollected))
     }

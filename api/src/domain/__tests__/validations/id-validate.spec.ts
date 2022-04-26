@@ -1,4 +1,4 @@
-import { Id } from "@/domain/validations"
+import { Id } from '@/domain/validations'
 
 import faker from 'faker'
 
@@ -9,7 +9,7 @@ describe('Id validate', () => {
     id = null
   })
 
-  const setId = (value: string) => id = value
+  const setId = (value: string) => (id = value)
   const isValid = (): boolean => Id.isValid(id)
 
   it('should be true if id is valid', () => {
