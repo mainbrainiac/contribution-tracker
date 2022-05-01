@@ -3,7 +3,7 @@ import { InvalidEmailError, InvalidNameError } from '@/domain/errors'
 import { Id, TotalDonated } from '@/domain/validations'
 
 export type DonationData = {
-  id: string;
+  id?: string;
   charityId: string
   contributorId: string
   totalDonated: number
