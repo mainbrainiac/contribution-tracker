@@ -1,12 +1,13 @@
 import { Either, left, right } from '@/shared'
 import { InvalidIdError } from '@/domain/errors'
+import crypto from 'crypto'
 
 export class Id {
   private constructor(private readonly id: string) {
     Object.freeze(this)
   }
 
-  public static create(id: string): Either<InvalidIdError, Id> {
+  public static create(id?: string): Either<InvalidIdError, Id> {
     if (!id) {
       id = crypto.randomUUID()
     }

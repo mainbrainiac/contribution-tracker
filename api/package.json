@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --noStackTrace --silent",
+    "test": "jest --passWithNoTests --noStackTrace",
     "lint": "eslint . --ext .ts",
     "format": "prettier --config .prettierrc '**/**/*.ts' --write",
     "prepare": "husky install"
@@ -28,5 +28,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
   }
 }

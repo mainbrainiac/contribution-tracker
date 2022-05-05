@@ -1,6 +1,6 @@
 export class InvalidIdError extends Error {
   constructor(name: string) {
-    super(`Invalid name: ${name}`)
+    super(`Invalid Id: ${name}`)
     this.name = 'InvalidIdError'
   }
 }

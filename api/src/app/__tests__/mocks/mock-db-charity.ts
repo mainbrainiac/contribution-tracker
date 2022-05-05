@@ -26,4 +26,40 @@ export class CharityRepositorySpy implements CharityRepository {
 
     return existsReturnValue
   }
+
+  public findByIdCalledWith: string
+
+  public async findById(id: string): Promise<CharityModel> {
+    this.findByIdCalledWith = id
+
+    const findByIdReturnValue: CharityModel = {
+      id,
+      name: 'name',
+      totalCollected: 0,
+      purpose: 'purpose',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+
+    return findByIdReturnValue
+  }
+
+  public updateTotalCollectedCalledWithId: string
+  public updatedTotalCollectedCalledWithTotalCollected: number
+
+  public async updateTotalCollected(id: string, totalCollected: number): Promise<CharityModel> {
+    this.updateTotalCollectedCalledWithId = id
+    this.updatedTotalCollectedCalledWithTotalCollected = totalCollected
+
+    const updateTotalCollectedReturnValue: CharityModel = {
+      id,
+      name: 'name',
+      totalCollected,
+      purpose: 'purpose',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+
+    return updateTotalCollectedReturnValue
+  }
 }

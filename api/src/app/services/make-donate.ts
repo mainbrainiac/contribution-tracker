@@ -37,6 +37,7 @@ export class MakeDonateService implements MakeDonate {
       totalDonated: donationOrError.value.totalDonated.value
     })
 
+
     await this.contributorRepository.updateTotalDonated(contributor.id, donationOrError.value.totalDonated.value)
     await this.charityRepository.updateTotalCollected(charity.id, donationOrError.value.totalDonated.value)
 
