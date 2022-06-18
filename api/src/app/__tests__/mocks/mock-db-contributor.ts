@@ -1,8 +1,8 @@
-import { ContributorRepository } from '@/app/contracts'
+import { IContributorRepository } from '@/app/contracts'
 import { ContributorData } from '@/domain/entities'
 import { ContributorModel } from '@/app/models'
 
-export class ContributorRepositorySpy implements ContributorRepository {
+export class ContributorRepositorySpy implements IContributorRepository {
   public addContributorCalledWith: ContributorData
 
   public async add(charityData: ContributorData): Promise<ContributorModel> {

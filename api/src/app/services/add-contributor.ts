@@ -1,11 +1,11 @@
 import { Contributor, ContributorData } from '@/domain/entities'
 import { AddContributorResponse, AddContributor } from '@/domain/usecases'
 import { left, right } from '@/shared'
-import { ContributorRepository } from '@/app/contracts'
+import { IContributorRepository } from '@/app/contracts'
 import { ContributorAlreadyExistsError } from '@/app/errors'
 
 export class AddContributorService implements AddContributor {
-  constructor(private readonly contributorRepository: ContributorRepository) {}
+  constructor(private readonly contributorRepository: IContributorRepository) {}
 
   async add(contributorData: ContributorData): Promise<AddContributorResponse> {
     const contributorOrError = Contributor.create(contributorData)

@@ -1,11 +1,11 @@
 import { Charity, CharityData } from '@/domain/entities'
 import { AddCharity, AddCharityResponse } from '@/domain/usecases'
 import { left, right } from '@/shared'
-import { CharityRepository } from '@/app/contracts'
+import { ICharityRepository } from '@/app/contracts'
 import { CharityAlreadyExistsError } from '@/app/errors'
 
 export class AddCharityService implements AddCharity {
-  constructor(private readonly charityRepository: CharityRepository) {}
+  constructor(private readonly charityRepository: ICharityRepository) {}
 
   async add(charityData: CharityData): Promise<AddCharityResponse> {
     const charityOrError = Charity.create(charityData)

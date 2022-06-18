@@ -8,7 +8,7 @@ import {
 import { Either, left, right } from '@/shared'
 
 export type CharityData = {
-  id: string
+  id?: string
   name: string
   purpose: string
   totalCollected: number

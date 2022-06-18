@@ -1,9 +1,9 @@
-import { DonationRepository } from "@/app/contracts";
+import { IDonationRepository } from "@/app/contracts";
 import { DonationModel } from "@/app/models";
 import { DonationData } from "@/domain/entities";
 
 
-export class DonationRepositorySpy implements DonationRepository {
+export class DonationRepositorySpy implements IDonationRepository {
   public addDonationCalledWith: DonationData
 
   public async add(donationData: DonationData): Promise<DonationModel> {

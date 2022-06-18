@@ -8,6 +8,8 @@ export class Id {
   }
 
   public static create(id?: string): Either<InvalidIdError, Id> {
+    console.log(id)
+
     if (!id) {
       id = crypto.randomUUID()
     }

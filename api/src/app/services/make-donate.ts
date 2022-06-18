@@ -1,14 +1,14 @@
 import { MakeDonate, MakeDonateParams, MakeDonateResponse } from "@/domain/usecases";
-import { CharityRepository, ContributorRepository, DonationRepository } from "@/app/contracts";
+import { ICharityRepository, IContributorRepository, IDonationRepository } from "@/app/contracts";
 import { CharityDontExistsError, ContributorDontExistsError } from "../errors";
 import { left, right } from "@/shared";
 import { Donation } from "@/domain/entities";
 
 export class MakeDonateService implements MakeDonate {
   constructor(
-    private readonly charityRepository: CharityRepository, 
-    private readonly contributorRepository: ContributorRepository,
-    private readonly donationRepository: DonationRepository
+    private readonly charityRepository: ICharityRepository, 
+    private readonly contributorRepository: IContributorRepository,
+    private readonly donationRepository: IDonationRepository
   ) {}
 
   async donate(donateParams: MakeDonateParams): Promise<MakeDonateResponse> {

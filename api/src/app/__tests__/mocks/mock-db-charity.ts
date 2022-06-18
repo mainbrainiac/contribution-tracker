@@ -1,8 +1,8 @@
-import { CharityRepository } from '@/app/contracts'
+import { ICharityRepository } from '@/app/contracts'
 import { CharityData } from '@/domain/entities'
 import { CharityModel } from '@/app/models'
 
-export class CharityRepositorySpy implements CharityRepository {
+export class CharityRepositorySpy implements ICharityRepository {
   public addCharityCalledWith: CharityData
 
   public async add(charityData: CharityData): Promise<CharityModel> {
@@ -46,7 +46,7 @@ export class CharityRepositorySpy implements CharityRepository {
 
   public updateTotalCollectedCalledWithId: string
   public updatedTotalCollectedCalledWithTotalCollected: number
-
+x
   public async updateTotalCollected(id: string, totalCollected: number): Promise<CharityModel> {
     this.updateTotalCollectedCalledWithId = id
     this.updatedTotalCollectedCalledWithTotalCollected = totalCollected
