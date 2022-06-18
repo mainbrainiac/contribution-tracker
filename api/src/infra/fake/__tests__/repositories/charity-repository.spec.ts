@@ -36,6 +36,18 @@ describe('CharityRepositoryIntegration', () => {
       const createdAt = response.createdAt
       expect(createdAt).toBeDefined()
     })
+
+    it('should add charity to the database', async () => {
+      const { sut } = makeSut()
+      const charity = validNewCharity()
+
+      await sut.add(charity)
+
+      const response = await sut.findById(charity.id)
+      expect(response.id).toEqual(charity.id)
+      expect(response.name).toEqual(charity.name)
+      expect(response.purpose).toEqual(charity.purpose)
+    })
   })
 
   describe('exists', () => {
@@ -68,9 +80,7 @@ describe('CharityRepositoryIntegration', () => {
 
       const response = await sut.findById(charity.id)
 
-      expect(response.id).toEqual(charity.id)
-      expect(response.name).toEqual(charity.name)
-      expect(response.purpose).toEqual(charity.purpose)
+      expect(response).toMatchObject(charity)
     })
 
     it('should return undefined if charity does not exist', async () => {
@@ -107,6 +117,19 @@ describe('CharityRepositoryIntegration', () => {
       const response = await sut.updateTotalCollected('random_id', 0)
 
       expect(response).toBeUndefined()
+    })
+
+    it('should update total collected in the database', async () => {
+      const { sut } = makeSut()
+      const charity = validNewCharity()
+      const totalCollected = 500
+
+      await sut.add(charity)
+
+      await sut.updateTotalCollected(charity.id, totalCollected)
+
+      const response = await sut.findById(charity.id)
+      expect(response.totalCollected).toEqual(totalCollected)
     })
   })
 })

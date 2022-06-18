@@ -9,7 +9,7 @@ export class CharityRepository implements ICharityRepository {
       id: charityData.id,
       name: charityData.name,
       purpose: charityData.purpose,
-      totalCollected: 0,
+      totalCollected: charityData.totalCollected,
       createdAt: new Date(),
       updatedAt: new Date()
     }
@@ -30,9 +30,7 @@ export class CharityRepository implements ICharityRepository {
     totalCollected: number
   ): Promise<CharityModel> {
     const charity = await this.findById(id)
-    if (!charity) {
-      return undefined
-    }
+    if (!charity) return undefined
     charity.totalCollected = totalCollected
     return charity
   }
