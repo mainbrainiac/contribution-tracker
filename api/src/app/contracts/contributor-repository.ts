@@ -5,5 +5,8 @@ export interface IContributorRepository {
   add(contributorData: ContributorData): Promise<ContributorModel>
   exists(name: string): Promise<boolean>
   findById(id: string): Promise<ContributorModel>
-  updateTotalDonated(id: string, totalDonated: number): Promise<ContributorModel>
+  updateTotalDonated(
+    id: string,
+    totalDonated: number
+  ): Promise<ContributorModel>
 }

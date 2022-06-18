@@ -1,9 +1,9 @@
-import { MakeDonateResponse } from "@/domain/usecases";
+import { MakeDonateResponse } from '@/domain/usecases'
 
 export type MakeDonateParams = {
-  charityId: string;
-  contributorId: string;
-  totalDonated: number;
+  charityId: string
+  contributorId: string
+  totalDonated: number
 }
 
 export interface MakeDonate {

@@ -1,7 +1,6 @@
-import { IDonationRepository } from "@/app/contracts";
-import { DonationModel } from "@/app/models";
-import { DonationData } from "@/domain/entities";
-
+import { IDonationRepository } from '@/app/contracts'
+import { DonationModel } from '@/app/models'
+import { DonationData } from '@/domain/entities'
 
 export class DonationRepositorySpy implements IDonationRepository {
   public addDonationCalledWith: DonationData
@@ -15,6 +14,6 @@ export class DonationRepositorySpy implements IDonationRepository {
       createdAt: new Date()
     }
 
-    return addDonationReturnValue;
+    return addDonationReturnValue
   }
 }

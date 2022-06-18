@@ -1,4 +1,4 @@
-import { ContributorModel } from "@/app/models";
+import { ContributorModel } from '@/app/models'
 
 export const contributors: ContributorModel[] = [
   {

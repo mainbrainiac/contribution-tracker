@@ -1,4 +1,4 @@
-import type { CharityModel } from "@/app/models"
+import type { CharityModel } from '@/app/models'
 
 export const charities: CharityModel[] = [
   {
@@ -24,5 +24,5 @@ export const charities: CharityModel[] = [
     totalCollected: 100,
     createdAt: new Date(),
     updatedAt: new Date()
-  },
+  }
 ]

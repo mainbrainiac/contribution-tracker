@@ -46,8 +46,11 @@ export class CharityRepositorySpy implements ICharityRepository {
 
   public updateTotalCollectedCalledWithId: string
   public updatedTotalCollectedCalledWithTotalCollected: number
-x
-  public async updateTotalCollected(id: string, totalCollected: number): Promise<CharityModel> {
+  x
+  public async updateTotalCollected(
+    id: string,
+    totalCollected: number
+  ): Promise<CharityModel> {
     this.updateTotalCollectedCalledWithId = id
     this.updatedTotalCollectedCalledWithTotalCollected = totalCollected
 

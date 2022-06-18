@@ -48,9 +48,12 @@ export class ContributorRepositorySpy implements IContributorRepository {
   public updateTotalDonatedCalledWithId: string
   public updateTotalDonatedCalledWithTotalDonated: number
 
-  public async updateTotalDonated(id: string, totalDonated: number): Promise<ContributorModel> {
-    this.updateTotalDonatedCalledWithId = id;
-    this.updateTotalDonatedCalledWithTotalDonated = totalDonated;
+  public async updateTotalDonated(
+    id: string,
+    totalDonated: number
+  ): Promise<ContributorModel> {
+    this.updateTotalDonatedCalledWithId = id
+    this.updateTotalDonatedCalledWithTotalDonated = totalDonated
 
     const updateTotalDonatedReturnValue: ContributorModel = {
       id,

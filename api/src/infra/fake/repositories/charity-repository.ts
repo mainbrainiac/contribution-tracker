@@ -1,7 +1,7 @@
-import { ICharityRepository } from "@/app/contracts"
-import { CharityModel } from "@/app/models"
-import { CharityData } from "@/domain/entities"
-import { charities } from "@/infra/fake/data-sources/charity"
+import { ICharityRepository } from '@/app/contracts'
+import { CharityModel } from '@/app/models'
+import { CharityData } from '@/domain/entities'
+import { charities } from '@/infra/fake/data-sources/charity'
 
 export class CharityRepository implements ICharityRepository {
   async add(charityData: CharityData): Promise<CharityModel> {
@@ -18,16 +18,21 @@ export class CharityRepository implements ICharityRepository {
   }
 
   async exists(name: string): Promise<boolean> {
-    return charities.some(charity => charity.name === name);
+    return charities.some((charity) => charity.name === name)
   }
 
   async findById(id: string): Promise<CharityModel> {
-    return charities.find(charity => charity.id === id);
+    return charities.find((charity) => charity.id === id)
   }
 
-  async updateTotalCollected(id: string, totalCollected: number): Promise<CharityModel> {
+  async updateTotalCollected(
+    id: string,
+    totalCollected: number
+  ): Promise<CharityModel> {
     const charity = await this.findById(id)
-    if (!charity) { return undefined }
+    if (!charity) {
+      return undefined
+    }
     charity.totalCollected = totalCollected
     return charity
   }
